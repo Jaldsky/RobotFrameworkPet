@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.10 on win32)" generated="20220430 23:04:40.720" rpa="false" schemaversion="3">
+<suite id="s1" name="Users.Get Api" source="C:\Users\MJald\PycharmProjects\VK-API_Test\Test_suites\users.get_api.robot">
+<test id="s1-t1" name="Test user_ids field with one argument" line="14">
+<kw name="GET" library="RequestsLibrary">
+<var>${user_ids_1_url_resp}</var>
+<arg>${user_ids_1_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220430 23:04:40.892" level="INFO">GET Request : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447 
+ path_url=/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220430 23:04:40.892" level="INFO">GET Response : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sat, 30 Apr 2022 20:04:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '81', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110990', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":[{"id":722653447,"first_name":"Bob","last_name":"Toster"}]} 
+ </msg>
+<msg timestamp="20220430 23:04:40.892" level="INFO">${user_ids_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:40.814" endtime="20220430 23:04:40.892"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${user_ids_1_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:40.892" level="INFO">Go to api-url: https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447</msg>
+<status status="PASS" starttime="20220430 23:04:40.892" endtime="20220430 23:04:40.892"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_vkid_1} should be equal ${user_ids_1_url_resp.json()}[response][0][id]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:40.892" level="INFO">Test data 722653447 should be equal 722653447</msg>
+<status status="PASS" starttime="20220430 23:04:40.892" endtime="20220430 23:04:40.892"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${user_ids_1_url_resp.json()}[response][0][id]</arg>
+<arg>${test_data_vkid_1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20220430 23:04:40.892" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:40.892" endtime="20220430 23:04:40.892"/>
+</kw>
+<tag>PositiveTest, SmokeTesting, users.getMethod</tag>
+<status status="PASS" starttime="20220430 23:04:40.814" endtime="20220430 23:04:40.892"/>
+</test>
+<test id="s1-t2" name="Test user_ids field with two arguments" line="20">
+<kw name="GET" library="RequestsLibrary">
+<var>${user_ids_2_url_resp}</var>
+<arg>${user_ids_2_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220430 23:04:40.970" level="INFO">GET Request : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447,512316593 
+ path_url=/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447,512316593 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220430 23:04:40.970" level="INFO">GET Response : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447,512316593 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sat, 30 Apr 2022 20:04:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '123', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110990', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":[{"id":722653447,"first_name":"Bob","last_name":"Toster"},{"id":512316593,"first_name":"Лена","last_name":"Новикова"}]} 
+ </msg>
+<msg timestamp="20220430 23:04:40.970" level="INFO">${user_ids_2_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:40.892" endtime="20220430 23:04:40.970"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${user_ids_2_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:40.970" level="INFO">Go to api-url: https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=722653447,512316593</msg>
+<status status="PASS" starttime="20220430 23:04:40.970" endtime="20220430 23:04:40.970"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_vkid_1} should be equal ${user_ids_2_url_resp.json()}[response][0][id]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:40.970" level="INFO">Test data 722653447 should be equal 722653447</msg>
+<status status="PASS" starttime="20220430 23:04:40.970" endtime="20220430 23:04:40.970"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${user_ids_2_url_resp.json()}[response][0][id]</arg>
+<arg>${test_data_vkid_1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20220430 23:04:40.970" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:40.970" endtime="20220430 23:04:40.970"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_vkid_2} should be equal ${user_ids_2_url_resp.json()}[response][1][id]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:40.970" level="INFO">Test data 512316593 should be equal 512316593</msg>
+<status status="PASS" starttime="20220430 23:04:40.970" endtime="20220430 23:04:40.970"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${user_ids_2_url_resp.json()}[response][1][id]</arg>
+<arg>${test_data_vkid_2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20220430 23:04:40.970" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:40.970" endtime="20220430 23:04:40.970"/>
+</kw>
+<tag>PositiveTest, SmokeTesting, users.getMethod</tag>
+<status status="PASS" starttime="20220430 23:04:40.892" endtime="20220430 23:04:40.970"/>
+</test>
+<test id="s1-t3" name="Test fields field with one argument" line="30">
+<kw name="GET" library="RequestsLibrary">
+<var>${fields_1_url_resp}</var>
+<arg>${fields_1_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220430 23:04:41.048" level="INFO">GET Request : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id 
+ path_url=/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220430 23:04:41.048" level="INFO">GET Response : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sat, 30 Apr 2022 20:04:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '104', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110990', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":[{"id":722653447,"first_name":"Bob","last_name":"Toster","photo_id":"722653447_457239024"}]} 
+ </msg>
+<msg timestamp="20220430 23:04:41.048" level="INFO">${fields_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:40.970" endtime="20220430 23:04:41.048"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${fields_1_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.048" level="INFO">Go to api-url: https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id</msg>
+<status status="PASS" starttime="20220430 23:04:41.048" endtime="20220430 23:04:41.048"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_fiels_1} should be equal ${fields_1_url_resp.json()}[response][0][photo_id]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.048" level="INFO">Test data 722653447_457239024 should be equal 722653447_457239024</msg>
+<status status="PASS" starttime="20220430 23:04:41.048" endtime="20220430 23:04:41.048"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${fields_1_url_resp.json()}[response][0][photo_id]</arg>
+<arg>${test_data_fiels_1}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220430 23:04:41.048" endtime="20220430 23:04:41.048"/>
+</kw>
+<tag>PositiveTest, SmokeTesting, users.getMethod</tag>
+<status status="PASS" starttime="20220430 23:04:40.970" endtime="20220430 23:04:41.048"/>
+</test>
+<test id="s1-t4" name="Test fields field with one all arguments" line="36">
+<kw name="GET" library="RequestsLibrary">
+<var>${fields_2_url_resp}</var>
+<arg>${fields_2_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220430 23:04:41.142" level="INFO">GET Request : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id,verified,sex,bdate,city,country,home_town,has_photo,photo_50,photo_100,photo_200_orig,photo_200,photo_400_orig,photo_max,photo_max_orig,online,domain,has_mobile,contacts,site,education,universities,schools,status,last_seen,followers_count,common_count,occupation,nickname,relatives,relation,personal,connections,exports,activities,interests,music,movies,tv,books,games,about,quotes,can_post,can_see_all_posts,can_see_audio,can_write_private_message,can_send_friend_request,is_favorite,is_hidden_from_feed,timezone,screen_name,maiden_name,crop_photo,is_friend,friend_status,career,military,blacklisted,blacklisted_by_me,can_be_invited_group 
+ path_url=/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id,verified,sex,bdate,city,country,home_town,has_photo,photo_50,photo_100,photo_200_orig,photo_200,photo_400_orig,photo_max,photo_max_orig,online,domain,has_mobile,contacts,site,education,universities,schools,status,last_seen,followers_count,common_count,occupation,nickname,relatives,relation,personal,connections,exports,activities,interests,music,movies,tv,books,games,about,quotes,can_post,can_see_all_posts,can_see_audio,can_write_private_message,can_send_friend_request,is_favorite,is_hidden_from_feed,timezone,screen_name,maiden_name,crop_photo,is_friend,friend_status,career,military,blacklisted,blacklisted_by_me,can_be_invited_group 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220430 23:04:41.142" level="INFO">GET Response : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id,verified,sex,bdate,city,country,home_town,has_photo,photo_50,photo_100,photo_200_orig,photo_200,photo_400_orig,photo_max,photo_max_orig,online,domain,has_mobile,contacts,site,education,universities,schools,status,last_seen,followers_count,common_count,occupation,nickname,relatives,relation,personal,connections,exports,activities,interests,music,movies,tv,books,games,about,quotes,can_post,can_see_all_posts,can_see_audio,can_write_private_message,can_send_friend_request,is_favorite,is_hidden_from_feed,timezone,screen_name,maiden_name,crop_photo,is_friend,friend_status,career,military,blacklisted,blacklisted_by_me,can_be_invited_group 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sat, 30 Apr 2022 20:04:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1913', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110990', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":[{"id":722653447,"first_name":"Bob","last_name":"Toster","sex":2,"screen_name":"id722653447","photo_50":"https:\/\/sun1-55.userapi.com\/s\/v1\/ig2\/U79cwFSFOTqDxTatAAN_tepwQwRf56wEQ8j3_tZMBgqfQBGwDP1y5YOEculwlppo8zF-4id1Q9qTN9Dk6v1mJ0om.jpg?size=50x50&amp;quality=95&amp;crop=0,0,993,993&amp;ava=1","photo_100":"https:\/\/sun1-55.userapi.com\/s\/v1\/ig2\/xbbfwHZcoxJuQmoBSoZyXpLiJcWGTYXax4XtwNMxwLP_1oUlCXXDOiyiU2m6DNZjKJTboXNtcs4hfBWAgD-mdmlj.jpg?size=100x100&amp;quality=95&amp;crop=0,0,993,993&amp;ava=1","online":1,"verified":0,"friend_status":0,"nickname":"","domain":"id722653447","bdate":"1.1.1980","timezone":3.000000,"photo_200":"https:\/\/sun1-55.userapi.com\/s\/v1\/ig2\/gmrk_XzB0c7EM4AgwKtx2zxqZ7fMZ95e4vldLYzF0bL6Ug1WiqysT900_gmqymrN1yP7j_h69l66tulBTruv4YAy.jpg?size=200x200&amp;quality=95&amp;crop=0,0,993,993&amp;ava=1","photo_max":"https:\/\/sun1-55.userapi.com\/s\/v1\/ig2\/gmrk_XzB0c7EM4AgwKtx2zxqZ7fMZ95e4vldLYzF0bL6Ug1WiqysT900_gmqymrN1yP7j_h69l66tulBTruv4YAy.jpg?size=200x200&amp;quality=95&amp;crop=0,0,993,993&amp;ava=1","photo_200_orig":"https:\/\/sun1-55.userapi.com\/s\/v1\/ig2\/6KxSErkrEGu1E-fBCcoerb6cnnTQy2KNjyv7GoNCJdmLpR6VpNOegkc0r3bnlJ4831IO8ixLHQ_sIbLIxt3P0EFx.jpg?size=200x200&amp;quality=95&amp;crop=0,0,1024,1024&amp;ava=1","photo_400_orig":"https:\/\/sun1-55.userapi.com\/s\/v1\/ig2\/3qVJBMtbCef3OFWr9sdjIXJK1fHB9W3xhWtcnqtqtNFcS-0qMcunnZpn1JFcR1jaZeRXGizoemhGTlb5W5nf_EVa.jpg?size=400x400&amp;quality=95&amp;crop=0,0,1024,1024&amp;ava=1","photo_max_orig":"https:\/\/sun1-55.userapi.com\/s\/v1\/ig2\/3qVJBMtbCef3OFWr9sdjIXJK1fHB9W3xhWtcnqtqtNFcS-0qMcunnZpn1JFcR1jaZeRXGizoemhGTlb5W5nf_EVa.jpg?size=400x400&amp;quality=95&amp;crop=0,0,1024,1024&amp;ava=1","photo_id":"722653447_457239024","has_photo":1,"has_mobile":1,"is_friend":0,"can_post":1,"can_see_all_posts":1,"can_see_audio":1,"interests":"","books":"","tv":"","quotes":"","about":"","games":"","movies":"","activities":"","music":"","can_write_private_message":1,"can_send_friend_request":1,"can_be_invited_group":true,"mobile_phone":"","home_phone":"","site":"","status":"","last_seen":{"platform":7,"time":1651349036},"exports":[],"crop_photo":{"photo":{"album_id":-6,"date":1651242555,"id":457239024,"owner_id":722653447,"post_id":2,"sizes":[{"height":75,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/PND9zOJfVD9Q3U_iCrWmuJBxihj9eP6wN1oZo4y6HMnJbGfwlIWM1w24i5miyWfpmAqNKDZn7P5FmP1q_e7buJQC.jpg?size=75x75&amp;quality=95&amp;type=album","type":"s","width":75},{"height":130,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/m2Fzbfk0jcRWOYvRTrrAhlClqwTqqBEIbcPn6gx0r_GkEfRrHEchMXG7eXuEY0qxHERXB6LKV2C9G7oSPjc0BMeF.jpg?size=130x130&amp;quality=95&amp;type=album","type":"m","width":130},{"height":604,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/2NajPeYUaUfisbDlufzY2-E_IrCaMDuXg_wjU_LOJrtXhhPEmrGAnK6AbNmvIm0fACxLwuVS-HKPaPvrJpnmywIi.jpg?size=604x604&amp;quality=95&amp;type=album","type":"x","width":604},{"height":807,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/1LBOlYhDZsO2MeLlgCpAhF9OSNet2kBybpb10QSyIQvW4Gn5mevbd4M-HhoOp3ZCkHBAXDIuGmkVt3IkrQ0aOWQR.jpg?size=807x807&amp;quality=95&amp;type=album","type":"y","width":807},{"height":1024,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/Rputrg1fRJdABGsWeeApU_q_jXRfMj8U7OQ0BX-kxTkonb4OG4GJAviXKbBUlitM1Wtk0IK347_Ld2MDNy8aeaoi.jpg?size=1024x1024&amp;quality=95&amp;type=album","type":"z","width":1024},{"height":130,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/m2Fzbfk0jcRWOYvRTrrAhlClqwTqqBEIbcPn6gx0r_GkEfRrHEchMXG7eXuEY0qxHERXB6LKV2C9G7oSPjc0BMeF.jpg?size=130x130&amp;quality=95&amp;type=album","type":"o","width":130},{"height":200,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/BIBlJwgQ5IhQrgvOsN-xBgZbox5C0AkLNsgW7vf5iMaVs1WQKJ5HISod3iL2TgadeTCp71yu_9uYVNQoeaJharrx.jpg?size=200x200&amp;quality=95&amp;type=album","type":"p","width":200},{"height":320,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/wcjprcX9yzn2wi3AsHVHIVuAgRUnnApa5MkuOibtPR332uQ4dFYokS0N0_dGZHNFmBPYvkMihXPrCfY7y2OktYrZ.jpg?size=320x320&amp;quality=95&amp;type=album","type":"q","width":320},{"height":510,"url":"https:\/\/sun9-35.userapi.com\/s\/v1\/if2\/N98eSJU22KiIYdjGJ_D7bExOajxI8mMepxY-098C3ChapGMKxhumxdSl9sKCsSgUXgUKXSdjBJx-7TsNLFjxPyXb.jpg?size=510x510&amp;quality=95&amp;type=album","type":"r","width":510}],"text":""},"crop":{"x":0.000000,"y":0.000000,"x2":100.000000,"y2":100.000000},"rect":{"x":0.000000,"y":0.000000,"x2":96.970000,"y2":96.970000}},"followers_count":0,"blacklisted":0,"blacklisted_by_me":0,"is_favorite":0,"is_hidden_from_feed":0,"common_count":0,"career":[],"military":[],"university":0,"university_name":"","faculty":0,"faculty_name":"","graduation":0,"home_town":"","relation":0,"personal":[],"universities":[],"schools":[],"relatives":[]}]} 
+ </msg>
+<msg timestamp="20220430 23:04:41.142" level="INFO">${fields_2_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:41.048" endtime="20220430 23:04:41.142"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${fields_2_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.142" level="INFO">Go to api-url: https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;fields=photo_id,verified,sex,bdate,city,country,home_town,has_photo,photo_50,photo_100,photo_200_orig,photo_200,photo_400_orig,photo_max,photo_max_orig,online,domain,has_mobile,contacts,site,education,universities,schools,status,last_seen,followers_count,common_count,occupation,nickname,relatives,relation,personal,connections,exports,activities,interests,music,movies,tv,books,games,about,quotes,can_post,can_see_all_posts,can_see_audio,can_write_private_message,can_send_friend_request,is_favorite,is_hidden_from_feed,timezone,screen_name,maiden_name,crop_photo,is_friend,friend_status,career,military,blacklisted,blacklisted_by_me,can_be_invited_group</msg>
+<status status="PASS" starttime="20220430 23:04:41.142" endtime="20220430 23:04:41.142"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_fiels_1} should be equal ${fields_2_url_resp.json()}[response][0][photo_id]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.142" level="INFO">Test data 722653447_457239024 should be equal 722653447_457239024</msg>
+<status status="PASS" starttime="20220430 23:04:41.142" endtime="20220430 23:04:41.142"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${fields_2_url_resp.json()}[response][0][photo_id]</arg>
+<arg>${test_data_fiels_1}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220430 23:04:41.142" endtime="20220430 23:04:41.142"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_fiels_2} should be equal ${fields_2_url_resp.json()}[response][0][can_write_private_message]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.142" level="INFO">Test data 1 should be equal 1</msg>
+<status status="PASS" starttime="20220430 23:04:41.142" endtime="20220430 23:04:41.142"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${fields_2_url_resp.json()}[response][0][can_write_private_message]</arg>
+<arg>${test_data_fiels_2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20220430 23:04:41.142" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:41.142" endtime="20220430 23:04:41.142"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_fiels_3} should be equal ${fields_2_url_resp.json()}[response][0][relatives]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.142" level="INFO">Test data [] should be equal []</msg>
+<status status="PASS" starttime="20220430 23:04:41.142" endtime="20220430 23:04:41.158"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${fields_2_url_resp.json()}[response][0][relatives]</arg>
+<arg>${test_data_fiels_3}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220430 23:04:41.158" level="INFO">Argument types are:
+&lt;class 'list'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:41.158" endtime="20220430 23:04:41.158"/>
+</kw>
+<tag>PositiveTest, SmokeTesting, users.getMethod</tag>
+<status status="PASS" starttime="20220430 23:04:41.048" endtime="20220430 23:04:41.158"/>
+</test>
+<test id="s1-t5" name="Test name_case field one variation" line="50">
+<kw name="GET" library="RequestsLibrary">
+<var>${name_case_1_url_resp}</var>
+<arg>${name_case_1_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220430 23:04:41.252" level="INFO">GET Request : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=512316593&amp;name_case=dat 
+ path_url=/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=512316593&amp;name_case=dat 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220430 23:04:41.252" level="INFO">GET Response : url=https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=512316593&amp;name_case=dat 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sat, 30 Apr 2022 20:04:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '97', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110990', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":[{"id":512316593,"first_name":"Лене","last_name":"Новиковой"}]} 
+ </msg>
+<msg timestamp="20220430 23:04:41.252" level="INFO">${name_case_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220430 23:04:41.158" endtime="20220430 23:04:41.252"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${name_case_1_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.252" level="INFO">Go to api-url: https://api.vk.com/method/users.get?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;user_ids=512316593&amp;name_case=dat</msg>
+<status status="PASS" starttime="20220430 23:04:41.252" endtime="20220430 23:04:41.252"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test data ${test_data_name_case_1} should be equal ${name_case_1_url_resp.json()}[response][0][last_name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220430 23:04:41.252" level="INFO">Test data Новиковой should be equal Новиковой</msg>
+<status status="PASS" starttime="20220430 23:04:41.252" endtime="20220430 23:04:41.252"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${name_case_1_url_resp.json()}[response][0][last_name]</arg>
+<arg>${test_data_name_case_1}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220430 23:04:41.252" endtime="20220430 23:04:41.252"/>
+</kw>
+<tag>PositiveTest, SmokeTesting, users.getMethod</tag>
+<status status="PASS" starttime="20220430 23:04:41.158" endtime="20220430 23:04:41.252"/>
+</test>
+<doc>Testing users.get API-method with all arguments</doc>
+<status status="PASS" starttime="20220430 23:04:40.720" endtime="20220430 23:04:41.252"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">PositiveTest, SmokeTesting, users.getMethod</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Users.Get Api">Users.Get Api</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220430 23:04:40.814" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 17: Setting variable '${wall_delete_message_url}' failed: Variable '${wall_delete}' not found.</msg>
+<msg timestamp="20220430 23:04:40.814" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 16: Setting variable '${wall_edit_message_url}' failed: Variable '${wall_edit}' not found.</msg>
+<msg timestamp="20220430 23:04:40.814" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 15: Setting variable '${wall_post_message_url}' failed: Variable '${wall_post}' not found.</msg>
+</errors>
+</robot>

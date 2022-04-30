@@ -1,12 +1,24 @@
 import os
 import shutil
+import time
 
+def scan_tests():
+    test_list = []
+    with os.scandir("Test_suites/") as it:
+        for entry in it:
+            if not entry.name.startswith('.') and entry.is_file():
+                test_list.append(entry.name)
+    return test_list
 
-def start_test_cases(): # доделать
-    os.chdir("Test_cases/")
-    os.system(r'robot aviability_auth.robot')
-    create_dir("aviability_auth")
-    move_logs("aviability_auth")
+def start_test_cases():
+    test_list = scan_tests()
+    os.chdir("Test_suites/")
+    for i in test_list:
+        os.system('robot ' + str(i))
+        create_dir(str(i))
+        move_logs(str(i))
+        time.sleep(1)
+
 
 def create_dir(test_name):
     path = '../Results/logs/' + test_name
@@ -39,21 +51,3 @@ def move_logs(test_name):
 
 if __name__ == "__main__":
     start_test_cases()
-
-    # path = "/home/User/Desktop/file.txt"
-    # start = "/home/User/"
-    # x = os.path.relpath(path, start)
-    # z = os.getcwd()
-    # y = os.chdir("Test_cases/")
-    # z2 = os.getcwd()
-    #
-    #
-    #
-    # os.system( r'robot aviability_auth.robot')
-    #
-    # print(x)
-    # print(z)
-    # print(y)
-    # print(z2)
-
-
