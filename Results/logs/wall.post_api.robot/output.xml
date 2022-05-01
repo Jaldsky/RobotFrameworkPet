@@ -1,107 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.10 on win32)" generated="20220430 23:04:42.553" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.9.10 on win32)" generated="20220501 11:19:02.550" rpa="false" schemaversion="3">
 <suite id="s1" name="Wall.Post Api" source="C:\Users\MJald\PycharmProjects\VK-API_Test\Test_suites\wall.post_api.robot">
-<test id="s1-t1" name="Test wall.post create wall post" line="22">
+<test id="s1-t1" name="Test wall.post create wall post" line="16">
 <kw name="GET" library="RequestsLibrary">
 <var>${wall_post_message_1_url_resp}</var>
 <arg>${wall_post_message_url}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220430 23:04:42.756" level="INFO">GET Request : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
+<msg timestamp="20220501 11:19:02.800" level="INFO">GET Request : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
  path_url=/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220430 23:04:42.756" level="INFO">GET Response : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
+<msg timestamp="20220501 11:19:02.800" level="INFO">GET Response : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
  status=200, reason=OK 
- headers={'Server': 'kittenx', 'Date': 'Sat, 30 Apr 2022 20:04:43 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '205', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110990', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
- body={"error":{"error_code":214,"error_msg":"Access to adding post denied: you can only add 150 posts a day","request_params":[{"key":"v","value":"5.81"},{"key":"message","value":"Продам Гараж"},{"key":"method","value":"wall.post"},{"key":"oauth","value":"1"}]}} 
+ headers={'Server': 'kittenx', 'Date': 'Sun, 01 May 2022 08:19:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '48', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110992', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":{"post_id":162}} 
  </msg>
-<msg timestamp="20220430 23:04:42.756" level="INFO">${wall_post_message_1_url_resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220430 23:04:42.646" endtime="20220430 23:04:42.756"/>
+<msg timestamp="20220501 11:19:02.800" level="INFO">${wall_post_message_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220501 11:19:02.643" endtime="20220501 11:19:02.800"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Go to api-url: ${wall_post_message_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220430 23:04:42.756" level="INFO">Go to api-url: https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=Продам%20Гараж</msg>
-<status status="PASS" starttime="20220430 23:04:42.756" endtime="20220430 23:04:42.756"/>
+<msg timestamp="20220501 11:19:02.815" level="INFO">Go to api-url: https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=Продам%20Гараж</msg>
+<status status="PASS" starttime="20220501 11:19:02.800" endtime="20220501 11:19:02.815"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Сhecking the correct response: ${wall_post_message_1_url_resp.json()}[response][post_id]</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220430 23:04:42.756" level="FAIL">Dictionary '${wall_post_message_1_url_resp.json()}' has no key 'response'.</msg>
-<status status="FAIL" starttime="20220430 23:04:42.756" endtime="20220430 23:04:42.756"/>
+<msg timestamp="20220501 11:19:02.815" level="INFO">Сhecking the correct response: 162</msg>
+<status status="PASS" starttime="20220501 11:19:02.815" endtime="20220501 11:19:02.815"/>
 </kw>
 <tag>PositiveTest, SmokeTesting, wall.postMethod</tag>
-<status status="FAIL" starttime="20220430 23:04:42.646" endtime="20220430 23:04:42.756">Dictionary '${wall_post_message_1_url_resp.json()}' has no key 'response'.</status>
+<status status="PASS" starttime="20220501 11:19:02.643" endtime="20220501 11:19:02.815"/>
 </test>
-<test id="s1-t2" name="Test wall.post edit wall post" line="28">
+<test id="s1-t2" name="Test wall.post edit wall post" line="22">
 <kw name="Get post id">
 <var>${wall_post_id}</var>
 <kw name="GET" library="RequestsLibrary">
 <var>${wall_post_message_1_url_resp}</var>
 <arg>${wall_post_message_url}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220430 23:04:42.881" level="INFO">GET Request : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
+<msg timestamp="20220501 11:19:03.128" level="INFO">GET Request : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
  path_url=/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220430 23:04:42.881" level="INFO">GET Response : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
+<msg timestamp="20220501 11:19:03.128" level="INFO">GET Response : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
  status=200, reason=OK 
- headers={'Server': 'kittenx', 'Date': 'Sat, 30 Apr 2022 20:04:43 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '205', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110990', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
- body={"error":{"error_code":214,"error_msg":"Access to adding post denied: you can only add 150 posts a day","request_params":[{"key":"v","value":"5.81"},{"key":"message","value":"Продам Гараж"},{"key":"method","value":"wall.post"},{"key":"oauth","value":"1"}]}} 
+ headers={'Server': 'kittenx', 'Date': 'Sun, 01 May 2022 08:19:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '48', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110992', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":{"post_id":163}} 
  </msg>
-<msg timestamp="20220430 23:04:42.881" level="INFO">${wall_post_message_1_url_resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220430 23:04:42.771" endtime="20220430 23:04:42.881"/>
+<msg timestamp="20220501 11:19:03.128" level="INFO">${wall_post_message_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220501 11:19:02.815" endtime="20220501 11:19:03.128"/>
 </kw>
 <kw name="Convert To Integer" library="BuiltIn">
 <var>${wall_post_id}</var>
 <arg>${wall_post_message_1_url_resp.json()}[response][post_id]</arg>
 <doc>Converts the given item to an integer number.</doc>
-<msg timestamp="20220430 23:04:42.896" level="FAIL">Dictionary '${wall_post_message_1_url_resp.json()}' has no key 'response'.</msg>
-<status status="FAIL" starttime="20220430 23:04:42.881" endtime="20220430 23:04:42.896"/>
+<msg timestamp="20220501 11:19:03.128" level="INFO">${wall_post_id} = 163</msg>
+<status status="PASS" starttime="20220501 11:19:03.128" endtime="20220501 11:19:03.128"/>
 </kw>
-<status status="FAIL" starttime="20220430 23:04:42.756" endtime="20220430 23:04:42.896"/>
+<msg timestamp="20220501 11:19:03.128" level="INFO">${wall_post_id} = 163</msg>
+<status status="PASS" starttime="20220501 11:19:02.815" endtime="20220501 11:19:03.128"/>
 </kw>
 <kw name="Strip String" library="String">
 <var>${wall_edit_message_1_url}</var>
 <arg>${wall_edit_message_url}&amp;post_id=${wall_post_id}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="NOT RUN" starttime="20220430 23:04:42.896" endtime="20220430 23:04:42.896"/>
+<msg timestamp="20220501 11:19:03.128" level="INFO">${wall_edit_message_1_url} = https://api.vk.com/method/wall.edit?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=Куплю%20Шкаф&amp;post_id=163</msg>
+<status status="PASS" starttime="20220501 11:19:03.128" endtime="20220501 11:19:03.128"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${wall_edit_message_1_url_resp}</var>
 <arg>${wall_edit_message_1_url}</arg>
 <doc>Sends a GET request.</doc>
-<status status="NOT RUN" starttime="20220430 23:04:42.896" endtime="20220430 23:04:42.896"/>
+<msg timestamp="20220501 11:19:03.301" level="INFO">GET Request : url=https://api.vk.com/method/wall.edit?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9A%D1%83%D0%BF%D0%BB%D1%8E%20%D0%A8%D0%BA%D0%B0%D1%84&amp;post_id=163 
+ path_url=/method/wall.edit?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9A%D1%83%D0%BF%D0%BB%D1%8E%20%D0%A8%D0%BA%D0%B0%D1%84&amp;post_id=163 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220501 11:19:03.301" level="INFO">GET Response : url=https://api.vk.com/method/wall.edit?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9A%D1%83%D0%BF%D0%BB%D1%8E%20%D0%A8%D0%BA%D0%B0%D1%84&amp;post_id=163 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sun, 01 May 2022 08:19:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '34', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110992', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":1} 
+ </msg>
+<msg timestamp="20220501 11:19:03.301" level="INFO">${wall_edit_message_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220501 11:19:03.128" endtime="20220501 11:19:03.301"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Go to api-url: ${wall_edit_message_1_url}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20220430 23:04:42.896" endtime="20220430 23:04:42.896"/>
+<msg timestamp="20220501 11:19:03.301" level="INFO">Go to api-url: https://api.vk.com/method/wall.edit?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=Куплю%20Шкаф&amp;post_id=163</msg>
+<status status="PASS" starttime="20220501 11:19:03.301" endtime="20220501 11:19:03.301"/>
 </kw>
 <tag>PositiveTest, SmokeTesting, wall.postMethod</tag>
-<status status="FAIL" starttime="20220430 23:04:42.756" endtime="20220430 23:04:42.896">Dictionary '${wall_post_message_1_url_resp.json()}' has no key 'response'.</status>
+<status status="PASS" starttime="20220501 11:19:02.815" endtime="20220501 11:19:03.301"/>
+</test>
+<test id="s1-t3" name="Test wall.post delete wall post" line="29">
+<kw name="Get post id">
+<var>${wall_delete_id_1}</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${wall_post_message_1_url_resp}</var>
+<arg>${wall_post_message_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220501 11:19:03.551" level="INFO">GET Request : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
+ path_url=/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220501 11:19:03.551" level="INFO">GET Response : url=https://api.vk.com/method/wall.post?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;message=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%93%D0%B0%D1%80%D0%B0%D0%B6 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sun, 01 May 2022 08:19:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '48', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110992', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":{"post_id":164}} 
+ </msg>
+<msg timestamp="20220501 11:19:03.551" level="INFO">${wall_post_message_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220501 11:19:03.301" endtime="20220501 11:19:03.551"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${wall_post_id}</var>
+<arg>${wall_post_message_1_url_resp.json()}[response][post_id]</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220501 11:19:03.551" level="INFO">${wall_post_id} = 164</msg>
+<status status="PASS" starttime="20220501 11:19:03.551" endtime="20220501 11:19:03.551"/>
+</kw>
+<msg timestamp="20220501 11:19:03.551" level="INFO">${wall_delete_id_1} = 164</msg>
+<status status="PASS" starttime="20220501 11:19:03.301" endtime="20220501 11:19:03.551"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${wall_delete_id_2}</var>
+<arg>${wall_delete_id_1}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220501 11:19:03.551" level="INFO">${wall_delete_id_2} = 163</msg>
+<status status="PASS" starttime="20220501 11:19:03.551" endtime="20220501 11:19:03.551"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${wall_delete_id_3}</var>
+<arg>${wall_delete_id_1}-2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220501 11:19:03.551" level="INFO">${wall_delete_id_3} = 162</msg>
+<status status="PASS" starttime="20220501 11:19:03.551" endtime="20220501 11:19:03.551"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Delete post num: ${wall_delete_id_1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:19:03.551" level="INFO">Delete post num: 164</msg>
+<status status="PASS" starttime="20220501 11:19:03.551" endtime="20220501 11:19:03.551"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Delete post num: ${wall_delete_id_2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:19:03.567" level="INFO">Delete post num: 163</msg>
+<status status="PASS" starttime="20220501 11:19:03.551" endtime="20220501 11:19:03.567"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Delete post num: ${wall_delete_id_3}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:19:03.567" level="INFO">Delete post num: 162</msg>
+<status status="PASS" starttime="20220501 11:19:03.567" endtime="20220501 11:19:03.567"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${wall_delete_message_1_url}</var>
+<arg>${wall_delete_message_url}&amp;post_id=${wall_delete_id_1}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20220501 11:19:03.567" level="INFO">${wall_delete_message_1_url} = https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=164</msg>
+<status status="PASS" starttime="20220501 11:19:03.567" endtime="20220501 11:19:03.567"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${wall_delete_message_2_url}</var>
+<arg>${wall_delete_message_url}&amp;post_id=${wall_delete_id_2}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20220501 11:19:03.567" level="INFO">${wall_delete_message_2_url} = https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=163</msg>
+<status status="PASS" starttime="20220501 11:19:03.567" endtime="20220501 11:19:03.567"/>
+</kw>
+<kw name="Strip String" library="String">
+<var>${wall_delete_message_3_url}</var>
+<arg>${wall_delete_message_url}&amp;post_id=${wall_delete_id_3}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<msg timestamp="20220501 11:19:03.567" level="INFO">${wall_delete_message_3_url} = https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=162</msg>
+<status status="PASS" starttime="20220501 11:19:03.567" endtime="20220501 11:19:03.567"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${wall_delete_message_1_url_resp}</var>
+<arg>${wall_delete_message_1_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220501 11:19:03.692" level="INFO">GET Request : url=https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=164 
+ path_url=/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=164 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220501 11:19:03.692" level="INFO">GET Response : url=https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=164 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sun, 01 May 2022 08:19:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '34', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110992', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":1} 
+ </msg>
+<msg timestamp="20220501 11:19:03.692" level="INFO">${wall_delete_message_1_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220501 11:19:03.567" endtime="20220501 11:19:03.692"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${wall_delete_message_2_url_resp}</var>
+<arg>${wall_delete_message_2_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220501 11:19:03.864" level="INFO">GET Request : url=https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=163 
+ path_url=/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=163 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220501 11:19:03.864" level="INFO">GET Response : url=https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=163 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sun, 01 May 2022 08:19:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '34', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110992', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":1} 
+ </msg>
+<msg timestamp="20220501 11:19:03.864" level="INFO">${wall_delete_message_2_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220501 11:19:03.692" endtime="20220501 11:19:03.864"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${wall_delete_message_3_url_resp}</var>
+<arg>${wall_delete_message_3_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220501 11:19:04.005" level="INFO">GET Request : url=https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=162 
+ path_url=/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=162 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220501 11:19:04.005" level="INFO">GET Response : url=https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=162 
+ status=200, reason=OK 
+ headers={'Server': 'kittenx', 'Date': 'Sun, 01 May 2022 08:19:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '34', 'Connection': 'keep-alive', 'X-Powered-By': 'KPHP/7.4.110992', 'Set-Cookie': 'remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com; secure; HttpOnly', 'Cache-control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'} 
+ body={"response":1} 
+ </msg>
+<msg timestamp="20220501 11:19:04.005" level="INFO">${wall_delete_message_3_url_resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220501 11:19:03.880" endtime="20220501 11:19:04.005"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${wall_delete_message_1_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:19:04.005" level="INFO">Go to api-url: https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=164</msg>
+<status status="PASS" starttime="20220501 11:19:04.005" endtime="20220501 11:19:04.005"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${wall_delete_message_2_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:19:04.005" level="INFO">Go to api-url: https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=163</msg>
+<status status="PASS" starttime="20220501 11:19:04.005" endtime="20220501 11:19:04.005"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Go to api-url: ${wall_delete_message_3_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:19:04.020" level="INFO">Go to api-url: https://api.vk.com/method/wall.delete?access_token=880e44a594166a1f7a1d10884139f111a8c9f39dc8027e5605d5c7114a05bc5d7240e42a39b505cb8eb2f&amp;v=5.81&amp;post_id=162</msg>
+<status status="PASS" starttime="20220501 11:19:04.005" endtime="20220501 11:19:04.020"/>
+</kw>
+<tag>PositiveTest, SmokeTesting, wall.postMethod</tag>
+<status status="PASS" starttime="20220501 11:19:03.301" endtime="20220501 11:19:04.020"/>
 </test>
 <doc>Functional approach to test wall.post API-method</doc>
-<status status="FAIL" starttime="20220430 23:04:42.568" endtime="20220430 23:04:42.896"/>
+<status status="PASS" starttime="20220501 11:19:02.550" endtime="20220501 11:19:04.020"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="2" skip="0">PositiveTest, SmokeTesting, wall.postMethod</stat>
+<stat pass="3" fail="0" skip="0">PositiveTest, SmokeTesting, wall.postMethod</stat>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Wall.Post Api">Wall.Post Api</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Wall.Post Api">Wall.Post Api</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220430 23:04:42.646" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 9: Setting variable '${fields_1_url}' failed: Variable '${users_get}' not found.</msg>
-<msg timestamp="20220430 23:04:42.646" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 10: Setting variable '${fields_2_url}' failed: Variable '${users_get}' not found.</msg>
-<msg timestamp="20220430 23:04:42.646" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 12: Setting variable '${name_case_1_url}' failed: Variable '${users_get}' not found.</msg>
-<msg timestamp="20220430 23:04:42.646" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 6: Setting variable '${user_ids_1_url}' failed: Variable '${users_get}' not found.</msg>
-<msg timestamp="20220430 23:04:42.646" level="ERROR">Error in file 'C:\Users\MJald\PycharmProjects\VK-API_Test\Resources\test_urls.robot' on line 7: Setting variable '${user_ids_2_url}' failed: Variable '${users_get}' not found.</msg>
 </errors>
 </robot>

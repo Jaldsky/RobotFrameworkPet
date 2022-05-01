@@ -1,21 +1,14 @@
 *** Settings ***
 Documentation    Functional approach to test wall.post API-method
 Default Tags    PositiveTest, SmokeTesting, wall.postMethod
-Resource  ../Resources/resources.robot
 Resource  ../Resources/test_urls.robot
-
-*** Variables ***
-${wall_post}    /wall.post?
-${wall_edit}    /wall.edit?
-${wall_delete}    /wall.delete?
-
-
 
 *** Keywords ***
 Get post id
     ${wall_post_message_1_url_resp}=  GET  ${wall_post_message_url}
     ${wall_post_id}=    convert to integer  ${wall_post_message_1_url_resp.json()}[response][post_id]
     [Return]    ${wall_post_id}
+
 
 
 *** Test Cases ***

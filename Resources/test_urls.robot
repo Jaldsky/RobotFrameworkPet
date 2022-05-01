@@ -1,8 +1,12 @@
 *** Settings ***
 Resource  ../Resources/resources.robot
+Resource  ../Resources/test_data.robot
 
 *** Variables ***
 ### Test data for users.get_api
+
+${users_get}    /users.get?
+
 ${user_ids_1_url}=    ${auth_url}${users_get}${auth_token}&${api_v}&user_ids=${test_data_vkid_1}
 ${user_ids_2_url}=    ${auth_url}${users_get}${auth_token}&${api_v}&user_ids=${test_data_vkid_1},${test_data_vkid_2}
 
@@ -12,6 +16,11 @@ ${fields_2_url}=    ${auth_url}${users_get}${auth_token}&${api_v}&fields=photo_i
 ${name_case_1_url}=    ${auth_url}${users_get}${auth_token}&${api_v}&user_ids=${test_data_vkid_2}&name_case=dat
 
 ### Test data for wall.post_api
+
+${wall_post}    /wall.post?
+${wall_edit}    /wall.edit?
+${wall_delete}    /wall.delete?
+
 ${wall_post_message_url}=    ${auth_url}${wall_post}${auth_token}&${api_v}&message=Продам%20Гараж
 ${wall_edit_message_url}=    ${auth_url}${wall_edit}${auth_token}&${api_v}&message=Куплю%20Шкаф
 ${wall_delete_message_url}=    ${auth_url}${wall_delete}${auth_token}&${api_v}
