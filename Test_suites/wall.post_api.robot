@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Functional approach to test wall.post API-method
-Default Tags    PositiveTest, SmokeTesting, wall.postMethod
+Default Tags    PositiveTest    SmokeTesting    wall.postMethod
 Resource  ../Resources/test_urls.robot
 
 *** Keywords ***

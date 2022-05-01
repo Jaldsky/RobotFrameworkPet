@@ -1,6 +1,6 @@
 *** Settings ***
-Documentation     Positive test of api.vk.com accessibility and authorization by token
-Default Tags    PositiveTest, SmokeTesting, Aviability, Authorization
+Documentation     Positive test of vk.com accessibility and authorization by token
+Default Tags    PositiveTest    SmokeTesting    Aviability    Authorization
 Resource  ../Resources/resources.robot
 
 *** Variables ***

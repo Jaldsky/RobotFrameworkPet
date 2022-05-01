@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Testing users.get API-method with all arguments
-Default Tags    PositiveTest, SmokeTesting, users.getMethod
+Default Tags    PositiveTest    SmokeTesting    users.getMethod
 Resource  ../Resources/test_data.robot
 Resource  ../Resources/test_urls.robot
 
